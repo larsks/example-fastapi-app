@@ -68,12 +68,7 @@ class ColdpressApp:
         pass
 
     def list_examples(self) -> models.StringListResponse:
-        try:
-            return models.StringListResponse(
-                success=True, data=self.api.list_examples()
-            )
-        except Exception as err:
-            return models.StringListResponse(success=False, error=str(err))
+        return models.StringListResponse(success=True, data=self.api.list_examples())
 
     def launch_example(self, example: str) -> models.JobStartResponse:
         pass
