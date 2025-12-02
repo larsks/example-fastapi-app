@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: example-fastapi-app
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: "Service"
+    name: example-fastapi-app
+  tls:
+    termination: Edge
+    insecureEdgeTerminationPolicy: Redirect
